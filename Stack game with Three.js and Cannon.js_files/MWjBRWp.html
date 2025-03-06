@@ -175,20 +175,67 @@ a:visited {
   </div>
 </div>
 
-<div id="results" style="display: flex; flex-direction: column; align-items: center;">
+<div id="results">
   <div class="content">
     <p>💀You missed the block💀</p>
-    <p>To reset the game press R</p>
+    <p>To reset the game, press R or tap the button below</p>
+    <button id="restartBtn">Restart Game</button>
   </div>
 </div>
 
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #1a1a1a;
+    color: white;
+  }
+
+  #results {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+  }
+
+  .content {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+  }
+
+  #restartBtn {
+    background-color: #ff4757;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    font-size: 18px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: background 0.3s ease;
+  }
+
+  #restartBtn:hover {
+    background-color: #e84148;
+  }
+</style>
+
 <script>
   document.addEventListener("keydown", function(event) {
-    if (event.key.toLowerCase() === "q") {
-      window.location.href = "queralt.html";
+    if (event.key.toLowerCase() === "r") {
+      location.reload();
     }
   });
+
+  document.getElementById("restartBtn").addEventListener("click", function() {
+    location.reload();
+  });
 </script>
+
 
 
 <div id="score">5</div>
